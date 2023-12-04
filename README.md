@@ -1,9 +1,8 @@
 # Project-Calculator
 
- add
-subtract
-multiply
-divide
+# Create all the buttons needed 0-9 , +,-,/, *. = , Clear 
+# Create a Display Element at the top
+
 A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables for each of the parts of a calculator operation. Create a variable for the first number, the operator, and the second number.
 Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
 Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key.
