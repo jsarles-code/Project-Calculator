@@ -27,11 +27,17 @@ function operate(operator, a, b) {
     }
 }
 // Path: display.js
-// display function
+// display function that shows what buttons have been pressed
 function display() {
-    let display = document.querySelector("#display");
+    let display = document.getElementById("display");
     display.textContent = displayValue;
+    displayValue = 6;
+    display.textContent = displayValue;
+    if (display.textContent.length > 10) {
+        display.textContent = display.textContent.slice(0, 10);
+    }
 }
+display();
 // Path: buttons.js
 // button event listener
 let buttons = document.querySelectorAll(".button");
@@ -84,24 +90,3 @@ function operator(operator) {
     displayValue += operator;
     display();
 }
-// Path: keyboard.js
-// keyboard event listener
-window.addEventListener("keydown", (e) => {
-    if (e.key == "Backspace") {
-        backspace();
-    } else if (e.key == "Enter") {
-        equals();
-    } else if (e.key == "Escape") {
-        clear();
-    } else if (e.key == "+" || e.key == "-" || e.key == "*" || e.key == "/") {
-        operator(e.key);
-    } else if (e.key == ".") {
-        if (displayValue.includes(".")) {
-            return;
-        } else {
-            number(e.key);
-        }
-    } else if (e.key >= 0 || e.key <= 9) {
-        number(e.key);
-    }
-});
