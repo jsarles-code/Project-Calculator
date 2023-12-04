@@ -31,7 +31,6 @@ function operate(operator, a, b) {
 function display() {
     let display = document.getElementById("display");
     display.textContent = displayValue;
-    displayValue = 6;
     display.textContent = displayValue;
     if (display.textContent.length > 10) {
         display.textContent = display.textContent.slice(0, 10);
