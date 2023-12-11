@@ -22,13 +22,11 @@ let operator = '';
 
 // Create a variable for the second number.
 let b = 0;
-// Create the functions that populate the display when you click the number buttons. 
-function populateDisplay(num) {
-    if (operator === '') {
-        a = a * 10 + num;
-        display.textContent = a;
-    } else {
-        b = b * 10 + num;
-        display.textContent = b;
-    }
-}
+
+// Create an event listener that listens for the number buttons 0-9 and displays them in the result field when clicked.
+const numbers = document.querySelectorAll('.number');
+numbers.forEach(number => {
+    number.addEventListener('click', () => {
+        document.querySelector('#result').value += number.value;
+    });
+});
