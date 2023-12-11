@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calc</title>
 </head>
+
 <body>
+    <!-- // connect JS script -->
     <script> src = "calc.js" </script>
     <!-- // add display text element for the calculator -->
-    <p class = "display"  id="display" >0</p>
+    <p class="display" id="display">100</p>
+    <!-- // add style to the calculator --> 
+    <style>
+        .display {
+            border: 1px solid black;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+
     <!-- // multiply button , add button , subtract button , divide button -->
-    <button onclick="multiply()">Multiply</button>
-    <button onclick="add()">Add</button>
-    <button onclick="subtract()">Subtract</button>
-    <button onclick="divide()">Divide</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="add()">+</button>
+    <button onclick="subtract()">-</button>
+    <button onclick="divide()">/</button>
+
     <!-- // number buttons  -->
+    <!-- // space   -->
+    <br>
+
     <button onclick="one()">1</button>
     <button onclick="two()">2</button>
     <button onclick="three()">3</button>
+    <br>
+
     <button onclick="four()">4</button>
     <button onclick="five()">5</button>
     <button onclick="six()">6</button>
+    <br>
     <button onclick="seven()">7</button>
     <button onclick="eight()">8</button>
     <button onclick="nine()">9</button>
+    <br>
     <button onclick="zero()">0</button>
+    <!-- //  clear button --> 
     <button onclick="clear()">Clear</button>
     <!-- // equals button -->
     <button onclick="equals()">=</button>
-    
-    
+
+
 </body>
+
 </html>
