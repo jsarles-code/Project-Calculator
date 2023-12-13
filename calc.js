@@ -51,6 +51,12 @@ let b = 0;
 let display = document.getElementById('display');
 let displayValue = '';
 const numberButtons = document.querySelectorAll('[data-number]')
+/**
+ * Represents a collection of operation buttons.
+ * @type {NodeList}
+ */
 const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
+const equalButton = document.querySelector('[data-equal]')
 const ClearButton = document.querySelector('[data-clear]')
+
+
