@@ -1,3 +1,10 @@
+<!-- FILEPATH: /C:/Users/jsarles/repos/Project-Calculator/calc.html -->
+<!--
+    This HTML file represents a calculator web page.
+    It includes a display element, number buttons, operation buttons, and clear and equals buttons.
+    The JavaScript file "calc.js" is connected to this HTML file.
+    The CSS file "calc.css" is linked to this HTML file to style the calculator.
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +16,12 @@
 </head>
 
 <body>
-    <!-- // connect JS script -->
+    <!-- connect JS script -->
     <!-- This script tag includes the JavaScript file "calc.js" -->
     <script src="calc.js"></script>
-    <!-- // add display text element for the calculator -->
+    <!-- add display text element for the calculator -->
     <p class="display" id="display">100</p>
-    <!-- // add style to the calculator -->
+    <!-- add style to the calculator -->
     <style>
         .display {
             border: 1px solid black;
@@ -24,14 +31,13 @@
         }
     </style>
 
-    <!-- // multiply button , add button , subtract button , divide button -->
-    <button onclick="multiply()">*</button>
-    <button onclick="add()">+</button>
-    <button onclick="subtract()">-</button>
-    <button onclick="divide()">/</button>
-    <!-- // space   -->
+    <!-- multiply button, add button, subtract button, divide button -->
+    <button data-operation onclick="multiply()">*</button>
+    <button data-operation onclick="add()">+</button>
+    <button data-operation onclick="subtract()">-</button>
+    <button data-operation onclick="divide()">/</button>
     <br>
-    <!-- // number buttons with data attributes -->
+    <!-- number buttons with data attributes -->
     <button data-number>1</button>
     <button data-number>2</button>
     <button data-number>3</button>
@@ -45,10 +51,10 @@
     <button data-number>9</button>
     <br>
     <button data-number>0</button>
-    <!-- //  clear button -->
-    <button onclick="clear()">Clear</button>
-    <!-- // equals button -->
-    <button onclick="equals()">=</button>
+    <!-- clear button -->
+    <button data-clear onclick="clear()">Clear</button>
+    <!-- equals button -->
+    <button data-equals onclick="equals()">=</button>
 
 
 </body>

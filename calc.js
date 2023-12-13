@@ -50,3 +50,7 @@ let b = 0;
 // Create and update a display variable when the number buttons are clicked
 let display = document.getElementById('display');
 let displayValue = '';
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const ClearButton = document.querySelector('[data-clear]')
