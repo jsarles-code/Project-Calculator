@@ -10,10 +10,10 @@
 
 <body>
     <!-- // connect JS script -->
-    <script> src = "calc.js" </script>
+    <script src="calc.js"></script>
     <!-- // add display text element for the calculator -->
     <p class="display" id="display">100</p>
-    <!-- // add style to the calculator --> 
+    <!-- // add style to the calculator -->
     <style>
         .display {
             border: 1px solid black;
@@ -29,26 +29,24 @@
     <button onclick="subtract()">-</button>
     <button onclick="divide()">/</button>
 
-    <!-- // number buttons  -->
+    
     <!-- // space   -->
     <br>
-
-    <button onclick="one()">1</button>
-    <button onclick="two()">2</button>
-    <button onclick="three()">3</button>
-    
+<!-- // number buttons with data attributes -->
+<button data-number>1</button>
+<button data-number>2</button>
+<button data-number>3</button>
     <br>
-
-    <button onclick="four()">4</button>
-    <button onclick="five()">5</button>
-    <button onclick="six()">6</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
     <br>
-    <button onclick="seven()">7</button>
-    <button onclick="eight()">8</button>
-    <button onclick="nine()">9</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
     <br>
     <button onclick="zero()">0</button>
-    <!-- //  clear button --> 
+    <!-- //  clear button -->
     <button onclick="clear()">Clear</button>
     <!-- // equals button -->
     <button onclick="equals()">=</button>
