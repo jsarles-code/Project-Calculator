@@ -60,3 +60,4 @@ const equalButton = document.querySelector('[data-equal]')
 const ClearButton = document.querySelector('[data-clear]')
 
 
+// equals function
