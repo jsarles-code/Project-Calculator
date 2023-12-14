@@ -47,6 +47,25 @@ let operator = '';
 // Create a variable for the second number.
 let b = 0;
 
+
+// Create a variable for the result.
+let result = 0;
+
+// Create a function that takes the first number a and the second number b and the operator and returns the result.
+function operate(a, operator, b) {
+    if (operator == '+') {
+        result = add(a, b);
+    } else if (operator == '-') {
+        result = subtract(a, b);
+    } else if (operator == '*') {
+        result = multiply(a, b);
+    } else if (operator == '/') {
+        result = divide(a, b);
+    }
+    return result;
+}
+
+
 // Create and update a display variable when the number buttons are clicked
 let display = document.getElementById('display');
 let displayValue = '';

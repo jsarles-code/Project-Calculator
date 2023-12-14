@@ -20,10 +20,14 @@
     <!-- This script tag includes the JavaScript file "calc.js" -->
     <script src="calc.js"></script>
     <!-- add display text element for the calculator -->
-    <p class="display" id="display">100</p>
+
+    <div class="output">
+        <div class="previous-operand">123 +</div>
+        <div class="current-operand">456</div>
+    </div>
     <!-- add style to the calculator -->
     <style>
-        .display {
+        .output {
             border: 1px solid black;
             width: 200px;
             height: 50px;
