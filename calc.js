@@ -64,19 +64,19 @@ function operate(a, operator, b) {
     }
     return result;
 }
-
-
-// Create and update a display variable when the number buttons are clicked
-let display = document.getElementById('display');
-let displayValue = '';
-const numberButtons = document.querySelectorAll('[data-number]')
 /**
  * Represents a collection of operation buttons.
  * @type {NodeList}
  */
+const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
-const equalButton = document.querySelector('[data-equal]')
-const ClearButton = document.querySelector('[data-clear]')
+const equalsButton = document.querySelector('[data-equals]')
+const deleteButton = document.querySelector('[data-delete]')
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousOperandTextElement = document.querySelector('[data-previous-operand]')
+const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
-
-// equals function
+// Create the functions that populate the display when you click the number buttons. 
+function addNumberToDisplay(number) {
+    output.textContent += number;
+}
