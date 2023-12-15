@@ -65,28 +65,3 @@ function operate(a, operator, b) {
     return result;
 }
 //Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
-let displayValue = '';
-let display = document.getElementById('display');
-let displayValueArray = [];
-let displayValueString = '';
-let displayValueStringArray = [];
-let displayValueStringArrayLength = 0;
-let displayValueStringArrayString = '';
-let displayValueStringArrayStringArray = [];
-let displayValueStringArrayStringArrayLength = 0;
-let displayValueStringArrayStringArrayString = '';
-
-function displayValueFunction() {
-    displayValue = this.value;
-    displayValueArray.push(displayValue);
-    displayValueString = displayValueArray.join('');
-    displayValueStringArray = displayValueString.split('');
-    displayValueStringArrayLength = displayValueStringArray.length;
-    displayValueStringArrayString = displayValueStringArray.join('');
-    displayValueStringArrayStringArray = displayValueStringArrayString.split('');
-    displayValueStringArrayStringArrayLength = displayValueStringArrayStringArray.length;
-    displayValueStringArrayStringArrayString = displayValueStringArrayStringArray.join('');
-    display.textContent = displayValueStringArrayStringArrayString;
-}
-let numberButtons = document.querySelectorAll('.numberButton');
-numberButtons.forEach(numberButton => numberButton.addEventListener('click', displayValueFunction));
