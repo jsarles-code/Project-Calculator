@@ -65,3 +65,10 @@ function operate(a, operator, b) {
     return result;
 }
 //Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+function displayNumber(number) {
+    if (display.textContent == '0') {
+        display.textContent = number;
+    } else {
+        display.textContent += number;
+    }
+}
