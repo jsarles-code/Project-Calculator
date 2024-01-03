@@ -1,74 +1,52 @@
-/**
- * Adds two numbers.
- * @param {number} a - The first number.
- * @param {number} b - The second number.
- * @returns {number} The sum of the two numbers.
- */
-function add(a, b) {
-    return a + b;
+// Create variables to store the values 
+let firstNumber;
+let operator;
+let secondNumber;
+
+// Create a function to operate on the numbers
+function operate(operator, num1, num2) {
+  if (operator === '+') {
+    return num1 + num2;
+  } else if (operator === '-') {
+    return num1 - num2;
+  } else if (operator === '*') {
+    return num1 * num2;
+  } else if (operator === '/') {
+    return num1 / num2; 
+  }
 }
 
-/**
- * Subtracts two numbers.
- * @param {number} a - The first number.
- * @param {number} b - The second number.
- * @returns {number} The difference between the two numbers.
- */
-function subtract(a, b) {
-    return a - b;
+// Function to clear the values
+function clear() {
+  firstNumber = '';
+  operator = '';
+  secondNumber = '';
 }
 
-/**
- * Multiplies two numbers.
- * @param {number} a - The first number.
- * @param {number} b - The second number.
- * @returns {number} The product of the two numbers.
- */
-function multiply(a, b) {
-    return a * b;
+// Function to display values
+function display(val) {
+  document.getElementById('display').innerText = val; 
 }
 
-/**
- * Divides two numbers.
- * @param {number} a - The first number.
- * @param {number} b - The second number.
- * @returns {number} The quotient of the two numbers.
- */
-function divide(a, b) {
-    return a / b;
+// On click of number buttons
+function handleNumberClick(num) {
+  if (!operator) {
+    firstNumber += num;
+    display(firstNumber); 
+  } else {
+    secondNumber += num;
+    display(secondNumber);
+  }
 }
 
-// Create a variable for the first number
-let a = 0;
+// On click of operator buttons
+function handleOperatorClick(op) {
+  operator = op;
+} 
 
-// Create a variable for the operator. 
-let operator = '';
-
-// Create a variable for the second number.
-let b = 0;
-
-
-// Create a variable for the result.
-let result = 0;
-
-// Create a function that takes the first number a and the second number b and the operator and returns the result.
-function operate(a, operator, b) {
-    if (operator == '+') {
-        result = add(a, b);
-    } else if (operator == '-') {
-        result = subtract(a, b);
-    } else if (operator == '*') {
-        result = multiply(a, b);
-    } else if (operator == '/') {
-        result = divide(a, b);
-    }
-    return result;
-}
-//Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
-function displayNumber(number) {
-    if (display.textContent == '0') {
-        display.textContent = number;
-    } else {
-        display.textContent += number;
-    }
+// On click of equal button
+function handleEqualClick() {
+  let result = operate(operator, firstNumber, secondNumber);
+  display(result);
+  clear();
 }
