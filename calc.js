@@ -50,22 +50,3 @@ function handleEqualClick() {
   display(result);
   clear();
 }
-<<<<<<< Updated upstream
-=======
-//Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
-let displayValue = 0;
-let display = document.getElementById('display');
-let displayString = '';
-let displayArray = [];
-let displayArray2 = [];
-
-function displayNumber(number) {
-    displayArray.push(number);
-    displayString = displayArray.join('');
-    display.innerHTML = displayString;
-    displayValue = parseInt(displayString);
-    console.log(displayValue);
-}
-
-
->>>>>>> Stashed changes
