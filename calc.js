@@ -1,21 +1,23 @@
+import { document } from 'some-library';
+import { getElementById } from 'some-library';
 function appendToDisplay(value) {
       document.getElementById('display').value += value;
     }
     
     function clearDisplay() {
-      document.getElementById('display').value = '';
+      getElementById('display').value = '';
     }
-    
+
     function evaluate() {
-      let expression = document.getElementById('display').value;
+      let expression = getElementById('display').value;
       let result = calculateExpression(expression);
       if (result === null) {
-        document.getElementById('display').value = 'Error';
+        getElementById('display').value = 'Error';
       } else {
-        document.getElementById('display').value = result;
+        getElementById('display').value = result;
       }
     }
-    
+
     function calculateExpression(expression) {
       try {
         return Function('"use strict";return (' + expression + ')')();
