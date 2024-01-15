@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { document } from 'some-library';
 import { getElementById } from 'some-library';
 function appendToDisplay(value) {
@@ -26,7 +25,6 @@ function appendToDisplay(value) {
         return null;
       }
     }
-=======
 // Create variables to store the values 
 let firstNumber;
 let operator;
@@ -79,4 +77,3 @@ function handleEqualClick() {
   display(result);
   clear();
 }
->>>>>>> parent of a126488 (trying again)
