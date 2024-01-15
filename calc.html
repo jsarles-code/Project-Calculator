@@ -1,77 +1,24 @@
-<!-- FILEPATH: /C:/Users/jsarles/repos/Project-Calculator/calc.html -->
-<!--
-    This HTML file represents a calculator web page.
-    It includes a display element, number buttons, operation buttons, and clear and equals buttons.
-    The JavaScript file "calc.js" is connected to this HTML file.
-    The CSS file "calc.css" is linked to this HTML file to style the calculator.
--->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calc</title>
-    <link rel="stylesheet" href="calc.css">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <!-- connect JS script -->
-    <!-- This script tag includes the JavaScript file "calc.js" -->
-    <script src="calc.js"></script>
-    <!-- add display text element for the calculator -->
-    <div class="display">
-        <p id="display"></p>
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <div id="buttons">
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <!-- More number buttons -->
+            <button onclick="press('+')">+</button>
+            <button onclick="press('-')">-</button>
+            <!-- More operator buttons -->
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculate()">=</button>
+        </div>
     </div>
-    
-    <div id="textField" style="display: none;">
-        This is the text that appears when you click the button.
-    </div>
-    <!-- add style to the calculator -->
-    <style>
-        .display {
-            border: 1px solid black;
-            width: 200px;
-            height: 50px;
-            text-align: center;
-        }
-    </style>
-
-
-    <!-- previous operand and current operand -->
-
-    <div data-previous-operand class="previous-operand"></div>
-    <div data-current-operand class="current-operand"></div>
-    <button data-all-clear class="span-two">AC</button>
-    <button data-delete>DEL</button>
-<br>
-
-    <!-- multiply button, add button, subtract button, divide button -->
-    <button data-operation onclick="multiply()">*</button>
-    <button data-operation onclick="add()">+</button>
-    <button data-operation onclick="subtract()">-</button>
-    <button data-operation onclick="divide()">/</button>
-    <br>
-    <!-- number buttons with data attributes -->
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <br>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <br>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <br>
-    <button data-number>0</button>
-    <!-- clear button -->
-    <button data-clear onclick="clear()">Clear</button>
-    <!-- equals button -->
-    <button data-equals onclick="equal()">=</button>
-
-
+    <script src="script.js"></script>
 </body>
-
 </html>

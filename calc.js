@@ -1,79 +1,39 @@
-import { document } from 'some-library';
-import { getElementById } from 'some-library';
-function appendToDisplay(value) {
-      document.getElementById('display').value += value;
-    }
-    
-    function clearDisplay() {
-      getElementById('display').value = '';
-    }
 
-    function evaluate() {
-      let expression = getElementById('display').value;
-      let result = calculateExpression(expression);
-      if (result === null) {
-        getElementById('display').value = 'Error';
-      } else {
-        getElementById('display').value = result;
-      }
-    }
+let display = document.getElementById('display');
 
-    function calculateExpression(expression) {
-      try {
-        return Function('"use strict";return (' + expression + ')')();
-      } catch (error) {
-        return null;
-      }
-    }
-// Create variables to store the values 
-let firstNumber;
-let operator;
-let secondNumber;
-
-// Create a function to operate on the numbers
-function operate(operator, num1, num2) {
-  if (operator === '+') {
-    return num1 + num2;
-  } else if (operator === '-') {
-    return num1 - num2;
-  } else if (operator === '*') {
-    return num1 * num2;
-  } else if (operator === '/') {
-    return num1 / num2; 
-  }
+function press(num) {
+    display.value += num;
 }
 
-// Function to clear the values
-function clear() {
-  firstNumber = '';
-  operator = '';
-  secondNumber = '';
+function clearDisplay() {
+    display.value = '';
 }
 
-// Function to display values
-function display(val) {
-  document.getElementById('display').innerText = val; 
+function calculate() {
+    try {
+        display.value = parseCalculationString(display.value);
+    } catch (e) {
+        display.value = 'Error';
+    }
 }
 
-// On click of number buttons
-function handleNumberClick(num) {
-  if (!operator) {
-    firstNumber += num;
-    display(firstNumber); 
-  } else {
-    secondNumber += num;
-    display(secondNumber);
-  }
-}
+function parseCalculationString(s) {
+    let operations = s.split(/(\d+)/).filter(Boolean);
+    let result = parseInt(operations[0]);
 
-// On click of operator buttons
-function handleOperatorClick(op) {
-  operator = op;
-} 
+    for (let i = 1; i < operations.length; i += 2) {
+        let operator = operations[i];
+        let nextNum = parseInt(operations[i + 1]);
 
-// On click of equal button
-function handleEqualClick() {
-  let result = operate(operator, firstNumber, secondNumber);
-  display(result);
-  clear();
+        switch (operator) {
+            case '+':
+                result += nextNum;
+                break;
+            case '-':
+                result -= nextNum;
+                break;
+            // Add cases for '*', '/', etc.
+        }
+    }
+    return result;
 }
