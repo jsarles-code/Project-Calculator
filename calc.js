@@ -33,6 +33,12 @@ function parseCalculationString(s) {
                 result -= nextNum;
                 break;
             // Add cases for '*', '/', etc.
+            case '*':
+                result *= nextNum;
+                break;
+            case '/':
+                result /= nextNum;
+                break;
         }
     }
     return result;
